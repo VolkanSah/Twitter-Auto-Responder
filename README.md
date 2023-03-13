@@ -1,4 +1,22 @@
-# twitter-api
+# Twitter Auto-Responder
+This Python script uses the Twitter API and Tweepy to automatically respond to mentions on Twitter that include the hashtag "#helloworld". 
+
+## Getting Started
+To use this script, you will need to have a Twitter developer account and create an app to obtain your API keys and access tokens. You will also need to install Tweepy and Python 3 on your machine.
+
+
+Once you have your API keys and access tokens, you can enter them into the `CONSUMER_KEY`, `CONSUMER_SECRET`, `ACCESS_KEY`, and `ACCESS_SECRET` variables at the top of the script.
+
+The script will store the ID of the last mention it responded to in a text file called `last_seen_id.txt`. Make sure you have write access to this file.
+
+
+## How it Works
+The script uses Tweepy to authenticate with the Twitter API and retrieve any new mentions since the last time it was run. It then checks each mention for the hashtag "#helloworld" and responds with a pre-defined message if the hashtag is found.
+
+The script runs in a continuous loop and checks for new mentions every 15 seconds. 
+
+## Usage
+To use the script, run it from the command line with the following command:
  
 ```python
 import tweepy
@@ -67,6 +85,7 @@ def reply_to_tweets():
 while True:
     reply_to_tweets()
     time.sleep(15)
-    ```
+```
 
-
+## Contributions
+Contributions to this project are welcome. If you find any bugs or have suggestions for new features, please create a new issue or submit a pull request.
